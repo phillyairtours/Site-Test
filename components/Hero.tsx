@@ -138,87 +138,208 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             <div
               onMouseMove={handleHudMouseMove}
               onMouseLeave={handleHudMouseLeave}
-              className="relative p-6 rounded-2xl glass-panel border border-cyan-500/30 shadow-2xl shadow-cyan-950/40 transition-all duration-200 cursor-crosshair"
+              className="relative p-5 sm:p-6 rounded-2xl glass-panel border-2 border-cyan-500/40 shadow-2xl shadow-cyan-950/60 transition-all duration-200 cursor-crosshair group"
             >
-              {/* HUD Header */}
-              <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+              {/* HUD Header Bar */}
+              <div className="flex items-center justify-between border-b border-cyan-500/20 pb-3 mb-3">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-cyan-hud animate-ping" />
-                  <span className="font-mono text-xs font-bold text-cyan-hud tracking-wider uppercase">
-                    PAFOS-01 // COCKPIT HUD
+                  <span className="font-mono text-xs sm:text-sm font-black text-cyan-hud tracking-wider uppercase">
+                    PRIMARY FLIGHT DISPLAY // PFD
                   </span>
                 </div>
-                <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">
-                  LIVE TELEMETRY
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                    AP ENG
+                  </span>
+                  <span className="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                    LIVE
+                  </span>
+                </div>
               </div>
 
-              {/* Artificial Horizon Frame */}
-              <div className="relative w-full h-48 sm:h-52 bg-slate-950 rounded-xl border border-cyan-500/40 overflow-hidden flex items-center justify-center">
+              {/* Artificial Horizon Frame - Extra Large Glass Display */}
+              <div className="relative w-full h-72 sm:h-80 bg-slate-950 rounded-xl border-2 border-cyan-400/50 overflow-hidden flex items-center justify-center shadow-inner">
+                
                 {/* Dynamic Horizon Ground/Sky Mesh */}
                 <div
-                  className="absolute w-[200%] h-[200%] transition-transform duration-75 ease-out pointer-events-none"
+                  className="absolute w-[220%] h-[220%] transition-transform duration-75 ease-out pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(to bottom, #0284c7 0%, #0369a1 49.6%, #2dd4bf 49.9%, #00f0ff 50.1%, #78350f 50.4%, #451a03 100%)",
-                    opacity: 0.8,
-                    transform: `translateY(${hudTilt.pitch * 3}px) rotate(${hudTilt.roll}deg)`,
+                      "linear-gradient(to bottom, #0369a1 0%, #0284c7 49.5%, #ffffff 49.9%, #38bdf8 50.1%, #78350f 50.5%, #451a03 100%)",
+                    transform: `translateY(${hudTilt.pitch * 4.2}px) rotate(${hudTilt.roll}deg)`,
                   }}
                 />
 
-                {/* Pitch Ladder Indicators */}
-                <div className="absolute inset-0 flex flex-col justify-around items-center opacity-60 font-mono text-[10px] text-cyan-hud pointer-events-none">
-                  <div className="flex items-center gap-2"><span className="w-6 h-[1px] bg-cyan-hud" />+10°<span className="w-6 h-[1px] bg-cyan-hud" /></div>
-                  <div className="flex items-center gap-2"><span className="w-4 h-[1px] bg-cyan-hud" />+05°<span className="w-4 h-[1px] bg-cyan-hud" /></div>
-                  <div className="flex items-center gap-2 font-bold text-white"><span className="w-12 h-[2px] bg-white shadow-[0_0_8px_#fff]" />00°<span className="w-12 h-[2px] bg-white shadow-[0_0_8px_#fff]" /></div>
-                  <div className="flex items-center gap-2"><span className="w-4 h-[1px] bg-cyan-hud" />-05°<span className="w-4 h-[1px] bg-cyan-hud" /></div>
-                  <div className="flex items-center gap-2"><span className="w-6 h-[1px] bg-cyan-hud" />-10°<span className="w-6 h-[1px] bg-cyan-hud" /></div>
-                </div>
-
-                {/* Center Aircraft Reticle */}
-                <div className="absolute z-10 flex items-center justify-center pointer-events-none">
-                  <div className="w-24 h-4 flex items-center justify-between">
-                    <div className="w-8 h-1 bg-amber-400 rounded-sm shadow-[0_0_8px_#f59e0b]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-amber-400 border border-white shadow-[0_0_8px_#f59e0b]" />
-                    <div className="w-8 h-1 bg-amber-400 rounded-sm shadow-[0_0_8px_#f59e0b]" />
+                {/* Roll Angle Arc & Pointer (Top of Display) */}
+                <div className="absolute top-2 left-0 right-0 flex flex-col items-center pointer-events-none z-20">
+                  {/* Sky Pointer (Inverted Triangle) that rotates with bank */}
+                  <div
+                    className="w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-t-[10px] border-t-amber-400 transition-transform duration-75 ease-out drop-shadow-[0_0_6px_rgba(245,158,11,0.9)]"
+                    style={{
+                      transform: `rotate(${hudTilt.roll}deg)`,
+                      transformOrigin: "center 70px",
+                    }}
+                  />
+                  {/* Roll Arc Scale Indicators */}
+                  <div className="flex items-center justify-center gap-3 sm:gap-4 text-[10px] font-mono font-extrabold text-cyan-200/90 pt-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                    <span>-45°</span>
+                    <span>-30°</span>
+                    <span>-10°</span>
+                    <span className="text-white font-black text-xs">▲ 0°</span>
+                    <span>+10°</span>
+                    <span>+30°</span>
+                    <span>+45°</span>
                   </div>
                 </div>
 
-                {/* Airspeed & Altitude Tapes (Now PIC / XC Time) */}
-                <div className="absolute left-2 top-3 bottom-3 w-12 bg-black/80 backdrop-blur-sm border border-cyan-500/30 rounded px-1 flex flex-col justify-between items-center text-[10px] font-mono text-cyan-300">
-                  <span className="text-[9px] text-cyan-hud font-bold mt-1 tracking-widest">PIC</span>
-                  <span>750</span>
-                  <span className="bg-cyan-500/20 w-full text-center py-1 rounded text-white font-bold border-y border-cyan-400/40">{PILOT_DATA.flightHours.pic}</span>
-                  <span>650</span>
-                  <span className="text-[8px] mb-1">HRS</span>
+                {/* Pitch Ladder Indicators - Large High-Visibility Scales */}
+                <div
+                  className="absolute inset-0 flex flex-col justify-center items-center pointer-events-none transition-transform duration-75 ease-out z-10"
+                  style={{
+                    transform: `translateY(${hudTilt.pitch * 4.2}px) rotate(${hudTilt.roll}deg)`,
+                  }}
+                >
+                  <div className="flex flex-col items-center gap-3 sm:gap-4 font-mono font-black text-xs sm:text-sm text-cyan-100 drop-shadow-[0_0_8px_rgba(0,240,255,0.9)]">
+                    {/* +20 deg */}
+                    <div className="flex items-center gap-2">
+                      <span className="w-10 sm:w-12 h-[2.5px] bg-cyan-200 border-b-2 border-cyan-400" />
+                      <span className="px-1 bg-slate-950/60 rounded">+20°</span>
+                      <span className="w-10 sm:w-12 h-[2.5px] bg-cyan-200 border-b-2 border-cyan-400" />
+                    </div>
+                    {/* +10 deg */}
+                    <div className="flex items-center gap-2">
+                      <span className="w-8 sm:w-10 h-[2.5px] bg-cyan-200 border-b-2 border-cyan-400" />
+                      <span className="px-1 bg-slate-950/60 rounded">+10°</span>
+                      <span className="w-8 sm:w-10 h-[2.5px] bg-cyan-200 border-b-2 border-cyan-400" />
+                    </div>
+                    {/* +05 deg */}
+                    <div className="flex items-center gap-2">
+                      <span className="w-5 sm:w-6 h-[2px] bg-cyan-300/80" />
+                      <span className="text-[10px] text-cyan-300 px-1 bg-slate-950/60 rounded">+05°</span>
+                      <span className="w-5 sm:w-6 h-[2px] bg-cyan-300/80" />
+                    </div>
+                    {/* 00 deg - Horizon Line (Super Visible) */}
+                    <div className="flex items-center gap-2">
+                      <span className="w-16 sm:w-20 h-[3.5px] bg-white shadow-[0_0_12px_#ffffff]" />
+                      <span className="text-white font-black text-sm sm:text-base px-2 py-0.5 bg-slate-950/80 rounded border border-white/40 shadow-[0_0_10px_rgba(255,255,255,0.7)]">
+                        00° HORIZON
+                      </span>
+                      <span className="w-16 sm:w-20 h-[3.5px] bg-white shadow-[0_0_12px_#ffffff]" />
+                    </div>
+                    {/* -05 deg */}
+                    <div className="flex items-center gap-2">
+                      <span className="w-5 sm:w-6 h-[2px] bg-cyan-300/80 border-t border-dashed" />
+                      <span className="text-[10px] text-cyan-300 px-1 bg-slate-950/60 rounded">-05°</span>
+                      <span className="w-5 sm:w-6 h-[2px] bg-cyan-300/80 border-t border-dashed" />
+                    </div>
+                    {/* -10 deg */}
+                    <div className="flex items-center gap-2">
+                      <span className="w-8 sm:w-10 h-[2.5px] bg-cyan-200 border-t-2 border-cyan-400 border-dashed" />
+                      <span className="px-1 bg-slate-950/60 rounded">-10°</span>
+                      <span className="w-8 sm:w-10 h-[2.5px] bg-cyan-200 border-t-2 border-cyan-400 border-dashed" />
+                    </div>
+                    {/* -20 deg */}
+                    <div className="flex items-center gap-2">
+                      <span className="w-10 sm:w-12 h-[2.5px] bg-cyan-200 border-t-2 border-cyan-400 border-dashed" />
+                      <span className="px-1 bg-slate-950/60 rounded">-20°</span>
+                      <span className="w-10 sm:w-12 h-[2.5px] bg-cyan-200 border-t-2 border-cyan-400 border-dashed" />
+                    </div>
+                  </div>
                 </div>
 
-                <div className="absolute right-2 top-3 bottom-3 w-12 bg-black/80 backdrop-blur-sm border border-cyan-500/30 rounded px-1 flex flex-col justify-between items-center text-[10px] font-mono text-cyan-300">
-                  <span className="text-[9px] text-cyan-hud font-bold mt-1 tracking-widest">XC</span>
-                  <span>450</span>
-                  <span className="bg-cyan-500/20 w-full text-center py-1 rounded text-white font-bold border-y border-cyan-400/40">{PILOT_DATA.flightHours.crossCountry}</span>
-                  <span>350</span>
-                  <span className="text-[8px] mb-1">HRS</span>
+                {/* Center Aircraft Flight Director Reticle */}
+                <div className="absolute z-20 flex items-center justify-center pointer-events-none">
+                  <div className="flex items-center justify-between w-28 sm:w-32">
+                    {/* Left Wing Bar */}
+                    <div className="w-10 sm:w-12 h-2.5 bg-amber-400 border-2 border-slate-950 rounded-sm shadow-[0_0_12px_#f59e0b]" />
+                    {/* Center Fuselage Pip */}
+                    <div className="w-3.5 h-3.5 rounded-full bg-amber-400 border-2 border-white shadow-[0_0_12px_#f59e0b]" />
+                    {/* Right Wing Bar */}
+                    <div className="w-10 sm:w-12 h-2.5 bg-amber-400 border-2 border-slate-950 rounded-sm shadow-[0_0_12px_#f59e0b]" />
+                  </div>
+                </div>
+
+                {/* Airspeed / PIC Tape (Left Side Tape - Much Larger & Readable) */}
+                <div className="absolute left-2 top-2 bottom-2 w-16 sm:w-20 bg-slate-950/95 backdrop-blur-md border-2 border-cyan-400/50 rounded-lg flex flex-col justify-between items-center py-1.5 z-20 shadow-xl font-mono">
+                  <div className="w-full text-center pb-1 border-b border-cyan-500/30 bg-cyan-950/60">
+                    <span className="text-[11px] sm:text-xs text-cyan-hud font-black tracking-wider block">
+                      PIC
+                    </span>
+                  </div>
+                  <span className="text-xs sm:text-sm font-bold text-slate-400">700</span>
+                  
+                  {/* Active Readout Box */}
+                  <div className="w-[115%] bg-cyan-500 text-slate-950 font-black text-center py-1 rounded shadow-[0_0_14px_rgba(0,240,255,0.8)] border border-white">
+                    <span className="text-sm sm:text-base font-extrabold tracking-tight block">
+                      {PILOT_DATA.flightHours.pic}
+                    </span>
+                  </div>
+
+                  <span className="text-xs sm:text-sm font-bold text-slate-400">600</span>
+                  <div className="w-full text-center pt-1 border-t border-cyan-500/30">
+                    <span className="text-[10px] text-cyan-300 font-extrabold tracking-wider block">
+                      HOURS
+                    </span>
+                  </div>
+                </div>
+
+                {/* Altitude / Cross-Country Tape (Right Side Tape - Much Larger & Readable) */}
+                <div className="absolute right-2 top-2 bottom-2 w-16 sm:w-20 bg-slate-950/95 backdrop-blur-md border-2 border-cyan-400/50 rounded-lg flex flex-col justify-between items-center py-1.5 z-20 shadow-xl font-mono">
+                  <div className="w-full text-center pb-1 border-b border-cyan-500/30 bg-cyan-950/60">
+                    <span className="text-[11px] sm:text-xs text-cyan-hud font-black tracking-wider block">
+                      XC
+                    </span>
+                  </div>
+                  <span className="text-xs sm:text-sm font-bold text-slate-400">300</span>
+                  
+                  {/* Active Readout Box */}
+                  <div className="w-[115%] bg-cyan-500 text-slate-950 font-black text-center py-1 rounded shadow-[0_0_14px_rgba(0,240,255,0.8)] border border-white">
+                    <span className="text-sm sm:text-base font-extrabold tracking-tight block">
+                      {PILOT_DATA.flightHours.crossCountry}
+                    </span>
+                  </div>
+
+                  <span className="text-xs sm:text-sm font-bold text-slate-400">200</span>
+                  <div className="w-full text-center pt-1 border-t border-cyan-500/30">
+                    <span className="text-[10px] text-cyan-300 font-extrabold tracking-wider block">
+                      HOURS
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom Heading & Pitch/Roll Readout Tape */}
+                <div className="absolute bottom-1.5 left-20 right-20 bg-slate-950/90 border border-cyan-500/40 rounded py-1 px-2 flex items-center justify-between text-[11px] font-mono font-black text-cyan-200 z-20">
+                  <span className="text-amber-300">HDG 090°</span>
+                  <span>P: {hudTilt.pitch >= 0 ? "+" : ""}{hudTilt.pitch.toFixed(1)}°</span>
+                  <span>R: {hudTilt.roll >= 0 ? "+" : ""}{hudTilt.roll.toFixed(1)}°</span>
+                  <span className="text-emerald-400 hidden sm:inline">ASEL</span>
                 </div>
               </div>
 
-              {/* Quick Metrics Bar */}
-              <div className="grid grid-cols-3 gap-2 mt-4 text-center">
-                <div className="p-2.5 rounded-lg bg-aerospace-900/80 border border-white/5">
-                  <div className="text-[10px] font-mono text-slate-400 uppercase">Total Time</div>
-                  <div className="text-lg font-bold text-amber-400 font-mono">
+              {/* Quick Metrics Bar Underneath HUD */}
+              <div className="grid grid-cols-3 gap-2.5 mt-3 text-center">
+                <div className="p-3 rounded-xl bg-aerospace-900/90 border border-amber-500/30">
+                  <div className="text-[11px] font-mono font-bold text-slate-300 uppercase tracking-wider">
+                    Total Time
+                  </div>
+                  <div className="text-xl sm:text-2xl font-black text-amber-400 font-mono mt-0.5">
                     {PILOT_DATA.flightHours.totalTime}+
                   </div>
                 </div>
-                <div className="p-2.5 rounded-lg bg-aerospace-900/80 border border-white/5">
-                  <div className="text-[10px] font-mono text-slate-400 uppercase">PIC Hours</div>
-                  <div className="text-lg font-bold text-cyan-hud font-mono">
+                <div className="p-3 rounded-xl bg-aerospace-900/90 border border-cyan-500/30">
+                  <div className="text-[11px] font-mono font-bold text-slate-300 uppercase tracking-wider">
+                    PIC Hours
+                  </div>
+                  <div className="text-xl sm:text-2xl font-black text-cyan-hud font-mono mt-0.5">
                     {PILOT_DATA.flightHours.pic}+
                   </div>
                 </div>
-                <div className="p-2.5 rounded-lg bg-aerospace-900/80 border border-white/5">
-                  <div className="text-[10px] font-mono text-slate-400 uppercase">Dual Given</div>
-                  <div className="text-lg font-bold text-emerald-400 font-mono">
+                <div className="p-3 rounded-xl bg-aerospace-900/90 border border-emerald-500/30">
+                  <div className="text-[11px] font-mono font-bold text-slate-300 uppercase tracking-wider">
+                    Dual Given
+                  </div>
+                  <div className="text-xl sm:text-2xl font-black text-emerald-400 font-mono mt-0.5">
                     {PILOT_DATA.flightHours.dualGiven}+
                   </div>
                 </div>

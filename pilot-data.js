@@ -15,7 +15,7 @@ const PILOT_PROFILE = {
     fullName: "Arthur Paley",
     callsignOrTitle: "Commercial Pilot • Flight Instructor",
     headline: "Commercial Pilot ASEL • Instrument Rated • Chief Flight Instructor",
-    tagline: "Career-Dedicated Aviator with 745+ Total Flight Hours, Advanced Instruction Mastery & Uncompromising Operational Discipline.",
+    tagline: "Career-Dedicated Aviator with 747+ Total Flight Hours, Advanced Instruction Mastery & Uncompromising Operational Discipline.",
     location: "Philadelphia, Pennsylvania, United States",
     homeBaseAirports: ["KPNE (Northeast Philadelphia)", "KPHL (Philadelphia Intl)", "KTTN (Trenton-Mercer)"],
     email: "arthur@pafosfly.com",
@@ -31,15 +31,16 @@ const PILOT_PROFILE = {
 
   // --- Professional Flight Hours Logbook (ForeFlight Verified) ---
   flightHours: {
-    totalTime: 745.0,        // Total Flight Hours
-    pic: 645.0,              // Pilot in Command (PIC)
+    totalTime: 747.4,        // Total Flight Hours
+    pic: 647.4,              // Pilot in Command (PIC)
     crossCountry: 253.4,     // Cross Country (XC)
-    dualGiven: 283.7,        // Dual Instruction Given (CFI/CFIS)
+    dualGiven: 286.1,        // Dual Instruction Given (CFI/CFIS)
     instrument: 71.9,        // Instrument Flight (Actual & Simulated)
     multiEngine: 9.2,        // Multi-Engine Time
     nightTime: 77.7,         // Night Flight Time
     tailwheelTime: 17.7,     // Tailwheel Time
-    complexHighPerf: 44.0,   // High Performance Aircraft Time
+    highPerformance: 44.0,   // High Performance Aircraft (>200HP) Time
+    complexTime: 18.4,       // Complex Aircraft (Retractable Gear / Prop) Time
     safetyRecord: "100%",    // Zero Incidents / Zero Violations
     lastBFRDate: "May 21, 2026 (Current)",
     medicalClass: "FAA Class 2 Medical (Valid through Sept 2026)",

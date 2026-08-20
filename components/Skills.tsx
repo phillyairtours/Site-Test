@@ -14,12 +14,13 @@ export const Skills: React.FC = () => {
   const hoursList = [
     { label: "Total Flight Time", value: PILOT_DATA.flightHours.totalTime, featured: true, subtext: "Comprehensive logged flight hours across airspace classes" },
     { label: "Pilot in Command (PIC)", value: PILOT_DATA.flightHours.pic, subtext: "Sole manipulator of flight controls & final mission authority" },
-    { label: "Cross Country (XC)", value: PILOT_DATA.flightHours.crossCountry, subtext: "Point-to-point cross-country navigational routes (>50 NM)" },
     { label: "Dual Given (Instruction)", value: PILOT_DATA.flightHours.dualGiven, subtext: "Active student flight instruction & safety evaluations" },
+    { label: "Cross Country (XC)", value: PILOT_DATA.flightHours.crossCountry, subtext: "Point-to-point cross-country navigational routes (>50 NM)" },
     { label: "Instrument (IFR)", value: PILOT_DATA.flightHours.instrument, subtext: "Actual IMC & simulated hood instrument procedures" },
     { label: "Night Operations", value: PILOT_DATA.flightHours.night, subtext: "Night cross-country flights & night precision landings" },
-    { label: "Tailwheel Aircraft", value: PILOT_DATA.flightHours.tailwheel, subtext: "Conventional-gear stick-and-rudder handling" },
-    { label: "Complex & High Perf", value: PILOT_DATA.flightHours.complexHighPerf, subtext: "Retractable gear, constant-speed prop & >200HP aircraft" },
+    { label: "High Performance (>200HP)", value: PILOT_DATA.flightHours.highPerformance, subtext: "High-horsepower aircraft operations (PA-32 Saratoga & Baron BE55)" },
+    { label: "Complex Aircraft", value: PILOT_DATA.flightHours.complex, subtext: "Retractable landing gear, flaps & constant-speed prop (Arrow & BE55)" },
+    { label: "Tailwheel Aircraft", value: PILOT_DATA.flightHours.tailwheel, subtext: "Conventional-gear stick-and-rudder handling (Citabria & C170)" },
   ];
 
   return (

@@ -6,7 +6,9 @@ export interface FlightHours {
   instrument: number;
   night: number;
   tailwheel: number;
-  complexHighPerf: number;
+  highPerformance: number;
+  complex: number;
+  complexHighPerf?: number;
   safetyRecord: string;
   medical: string;
 }
@@ -71,7 +73,7 @@ export const PILOT_DATA: PilotProfile = {
   name: "Arthur Paley",
   headline: "Owner & Chief Instructor at PAFOS FLY | Commercial Pilot ASEL • Instrument Rated",
   summary:
-    "Safety-driven commercial aviator and flight instructor with 745+ total flight hours. Proven background in flight operations management, standardized flight instruction, and disciplined aeronautical decision-making. Actively seeking long-term, stable opportunities in corporate flight departments, Part 135 charter operations, or specialized flight operations.",
+    "Safety-driven commercial aviator and flight instructor with 747+ total flight hours. Proven background in flight operations management, standardized flight instruction, and disciplined aeronautical decision-making. Actively seeking long-term, stable opportunities in corporate flight departments, Part 135 charter operations, or specialized flight operations.",
   location: "Philadelphia, Pennsylvania, United States",
   homeAirports: ["KPNE (Northeast Philadelphia)"],
   email: "arthur@pafosfly.com",
@@ -83,13 +85,15 @@ export const PILOT_DATA: PilotProfile = {
   availability: "Available for Corporate, Part 135 Charter, Contract Operations & Advanced Flight Training",
 
   flightHours: {
-    totalTime: 745.0,
-    pic: 645.0,
+    totalTime: 747.4,
+    pic: 647.4,
     crossCountry: 253.4,
-    dualGiven: 283.7,
+    dualGiven: 286.1,
     instrument: 71.9,
     night: 77.7,
     tailwheel: 17.7,
+    highPerformance: 44.0,
+    complex: 18.4,
     complexHighPerf: 44.0,
     safetyRecord: "100% Incident-Free Safety Record",
     medical: "Second Class Medical (Valid through Sept 2026)",
@@ -275,8 +279,8 @@ export const PILOT_DATA: PilotProfile = {
   ],
 
   fleet: [
-    { model: "Pipistrel Alpha Trainer (PIAT)", role: "356.5 Hrs • Primary & Advanced Instruction" },
-    { model: "Piper PA-28 Series (Archer / Cherokee / Arrow)", role: "118.7 Hrs • Complex & Commercial Transition" },
+    { model: "Pipistrel Alpha Trainer (PIAT)", role: "398.0 Hrs • Primary & Advanced Instruction" },
+    { model: "Piper PA-28 Series (Archer / Cherokee / Arrow)", role: "124.7 Hrs • Complex & Commercial Transition" },
     { model: "Cessna 172 Skyhawk", role: "91.6 Hrs • IFR & Cross-Country Operations" },
     { model: "Cessna 150 / 150M / 150L", role: "49.9 Hrs • Foundational Flight Training" },
     { model: "Piper Saratoga PA-32-301FT", role: "34.8 Hrs • High-Performance Operations" },
