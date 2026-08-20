@@ -43,7 +43,7 @@ export const About: React.FC = () => {
             About Arthur Paley
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-400 leading-relaxed">
-            Based out of the Greater Philadelphia metropolitan airspace (KPNE / KPHL), Arthur combines disciplined commercial pilot execution with flight academy leadership, ensuring exceptional safety, passenger comfort, and operational precision.
+            Based out of the Greater Philadelphia metropolitan airspace (KPNE), Arthur combines disciplined commercial pilot execution with flight academy leadership, ensuring exceptional safety, passenger comfort, and operational precision.
           </p>
         </div>
 

@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} Arthur Paley. All rights reserved.
           </div>
           <div>
-            Base Airspace: KPNE / KPHL / KTTN • Philadelphia, PA
+            Base Airspace: KPNE • Philadelphia, PA
           </div>
         </div>
 

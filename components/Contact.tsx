@@ -159,7 +159,7 @@ export const Contact: React.FC = () => {
             {/* Base Location Info */}
             <div className="p-4 rounded-xl bg-aerospace-900/60 border border-white/5 text-xs text-slate-400 flex items-center gap-3">
               <MapPin className="w-4 h-4 text-cyan-hud flex-shrink-0" />
-              <span>Base Airspace: KPNE (Northeast Philadelphia), KPHL, KTTN</span>
+              <span>Base Airspace: KPNE (Northeast Philadelphia)</span>
             </div>
           </div>
 
@@ -242,7 +242,7 @@ export const Contact: React.FC = () => {
                         type="text"
                         value={formData.airport}
                         onChange={(e) => setFormData({ ...formData, airport: e.target.value })}
-                        placeholder="e.g. KPNE, KPHL, KTEB"
+                        placeholder="e.g. KPNE, KTEB"
                         className="w-full px-4 py-2.5 rounded-xl bg-aerospace-900/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-hud focus:ring-1 focus:ring-cyan-hud transition-all"
                       />
                     </div>

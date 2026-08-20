@@ -11,13 +11,21 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { ResumeModal } from "@/components/ResumeModal";
 
+import { Plane } from "lucide-react";
+
 export default function Home() {
   const [resumeOpen, setResumeOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-aerospace-950 text-slate-100 relative selection:bg-cyan-500/30 selection:text-cyan-hud">
-      {/* Navigation */}
-      <Navbar onOpenResume={() => setResumeOpen(true)} />
+    <main className="min-h-screen bg-aerospace-950 text-slate-100 relative selection:bg-cyan-500/30 selection:text-cyan-hud animate-gradient">
+      {/* Background Plane */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden flex items-center justify-center opacity-15">
+        <Plane className="w-64 h-64 text-slate-600 animate-plane-subtle" />
+      </div>
+
+      <div className="relative z-10">
+        {/* Navigation */}
+        <Navbar onOpenResume={() => setResumeOpen(true)} />
 
       {/* 1. Intro Hero Section */}
       <Hero onOpenResume={() => setResumeOpen(true)} />
@@ -42,6 +50,7 @@ export default function Home() {
 
       {/* Printable Pilot Resume Modal */}
       <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
+      </div>
     </main>
   );
 }

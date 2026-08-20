@@ -71,3 +71,42 @@
     display: block !important;
   }
 }
+
+/* Subtle Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 100%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+.animate-gradient {
+  background: radial-gradient(circle at center, #112244 0%, #050811 40%, #040d1a 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 90s linear infinite;
+}
+
+@keyframes planeFly {
+  0% { transform: translate(-10vw, 80vh) rotate(20deg) scale(0.8); opacity: 0; }
+  5% { opacity: 0.35; }
+  45% { opacity: 0.35; transform: translate(110vw, 20vh) rotate(20deg) scale(0.8); }
+  50% { transform: translate(120vw, 15vh) rotate(20deg) scale(0.8); opacity: 0; }
+  50.1% { transform: translate(120vw, 15vh) rotate(200deg) scale(0.8); opacity: 0; }
+  55% { opacity: 0.35; transform: translate(110vw, 20vh) rotate(200deg) scale(0.8); }
+  95% { opacity: 0.35; transform: translate(-10vw, 80vh) rotate(200deg) scale(0.8); }
+  100% { transform: translate(-20vw, 85vh) rotate(200deg) scale(0.8); opacity: 0; }
+}
+
+.animate-plane-subtle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+  animation: planeFly 90s linear infinite;
+  color: rgba(34, 211, 238, 0.4);
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}

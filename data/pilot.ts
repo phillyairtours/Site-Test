@@ -73,7 +73,7 @@ export const PILOT_DATA: PilotProfile = {
   summary:
     "Safety-driven commercial aviator and flight instructor with 745+ total flight hours. Proven background in flight operations management, standardized flight instruction, and disciplined aeronautical decision-making. Actively seeking long-term, stable opportunities in corporate flight departments, Part 135 charter operations, or specialized flight operations.",
   location: "Philadelphia, Pennsylvania, United States",
-  homeAirports: ["KPNE (Northeast Philadelphia)", "KPHL (Philadelphia Intl)", "KTTN (Trenton-Mercer)"],
+  homeAirports: ["KPNE (Northeast Philadelphia)"],
   email: "arthur@pafosfly.com",
   phone: "(917) 385-9680",
   phoneRaw: "9173859680",
@@ -92,7 +92,7 @@ export const PILOT_DATA: PilotProfile = {
     tailwheel: 17.7,
     complexHighPerf: 44.0,
     safetyRecord: "100% Incident-Free Safety Record",
-    medical: "FAA Class 2 Medical (Valid through Sept 2026)",
+    medical: "Second Class Medical (Valid through Sept 2026)",
   },
 
   certificates: [
@@ -138,6 +138,14 @@ export const PILOT_DATA: PilotProfile = {
       description:
         "Specialized instruction in instrument charts, weather theory, IFR clearance procedures, and advanced avionics systems.",
       badge: "FAA IGI",
+    },
+    {
+      title: "Restricted Radiotelephone Operator Permit",
+      category: "International Communications",
+      authority: "Federal Communications Commission (FCC)",
+      description:
+        "Authorized to operate and maintain aircraft radio stations for international and commercial flight operations.",
+      badge: "FCC Permit",
     },
   ],
 

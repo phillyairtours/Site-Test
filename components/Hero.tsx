@@ -68,13 +68,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             </div>
 
             {/* Main Headline */}
-            <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                {PILOT_DATA.name}
-              </h1>
-              <p className="mt-3 text-lg sm:text-xl font-medium text-slate-300">
-                Chief Flight Instructor • Flight Operations Leader • Corporate Aviator
-              </p>
+            <div className="flex items-center gap-6 sm:gap-8">
+              <img
+                src="/profile-photo.jpg"
+                alt="Arthur Paley"
+                className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-full border-4 border-cyan-500/30 shadow-xl shadow-cyan-900/40 flex-shrink-0"
+              />
+              <div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                  {PILOT_DATA.name}
+                </h1>
+                <p className="mt-3 text-lg sm:text-xl font-medium text-slate-300">
+                  Chief Flight Instructor • Flight Operations Leader • Corporate Aviator
+                </p>
+              </div>
             </div>
 
             {/* Summary */}
@@ -90,7 +97,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Compass className="w-4 h-4 text-amber-400" />
-                <span>KPNE • KPHL • KTTN</span>
+                <span>KPNE</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -153,8 +160,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   className="absolute w-[200%] h-[200%] transition-transform duration-75 ease-out pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(to bottom, #0369a1 0%, #0284c7 49.6%, #ffffff 49.9%, #00f0ff 50.1%, #78350f 50.4%, #451a03 100%)",
-                    opacity: 0.35,
+                      "linear-gradient(to bottom, #0284c7 0%, #0369a1 49.6%, #2dd4bf 49.9%, #00f0ff 50.1%, #78350f 50.4%, #451a03 100%)",
+                    opacity: 0.8,
                     transform: `translateY(${hudTilt.pitch * 3}px) rotate(${hudTilt.roll}deg)`,
                   }}
                 />
@@ -177,21 +184,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   </div>
                 </div>
 
-                {/* Airspeed & Altitude Tapes */}
-                <div className="absolute left-2 top-3 bottom-3 w-10 bg-black/60 border border-white/10 rounded px-1 flex flex-col justify-between items-center text-[10px] font-mono text-cyan-300">
-                  <span className="text-[8px] text-slate-400">IAS</span>
-                  <span>140</span>
-                  <span className="bg-cyan-500/20 px-1 py-0.5 rounded text-white font-bold border border-cyan-400/40">120</span>
-                  <span>100</span>
-                  <span className="text-[8px]">KT</span>
+                {/* Airspeed & Altitude Tapes (Now PIC / XC Time) */}
+                <div className="absolute left-2 top-3 bottom-3 w-12 bg-black/80 backdrop-blur-sm border border-cyan-500/30 rounded px-1 flex flex-col justify-between items-center text-[10px] font-mono text-cyan-300">
+                  <span className="text-[9px] text-cyan-hud font-bold mt-1 tracking-widest">PIC</span>
+                  <span>750</span>
+                  <span className="bg-cyan-500/20 w-full text-center py-1 rounded text-white font-bold border-y border-cyan-400/40">{PILOT_DATA.flightHours.pic}</span>
+                  <span>650</span>
+                  <span className="text-[8px] mb-1">HRS</span>
                 </div>
 
-                <div className="absolute right-2 top-3 bottom-3 w-12 bg-black/60 border border-white/10 rounded px-1 flex flex-col justify-between items-center text-[10px] font-mono text-cyan-300">
-                  <span className="text-[8px] text-slate-400">ALT</span>
-                  <span>6500</span>
-                  <span className="bg-cyan-500/20 px-1 py-0.5 rounded text-white font-bold border border-cyan-400/40">5500</span>
-                  <span>4500</span>
-                  <span className="text-[8px]">FT</span>
+                <div className="absolute right-2 top-3 bottom-3 w-12 bg-black/80 backdrop-blur-sm border border-cyan-500/30 rounded px-1 flex flex-col justify-between items-center text-[10px] font-mono text-cyan-300">
+                  <span className="text-[9px] text-cyan-hud font-bold mt-1 tracking-widest">XC</span>
+                  <span>450</span>
+                  <span className="bg-cyan-500/20 w-full text-center py-1 rounded text-white font-bold border-y border-cyan-400/40">{PILOT_DATA.flightHours.crossCountry}</span>
+                  <span>350</span>
+                  <span className="text-[8px] mb-1">HRS</span>
                 </div>
               </div>
 

@@ -157,10 +157,13 @@ export const Skills: React.FC = () => {
 
           {/* Fleet Experience Panel */}
           <div className="p-6 sm:p-8 rounded-2xl glass-panel">
-            <div className="flex items-center gap-2 mb-6 text-cyan-hud">
+            <div className="flex items-center gap-2 mb-2 text-cyan-hud">
               <Plane className="w-5 h-5" />
               <h3 className="text-xl font-bold text-white">Aircraft Types & Fleet Experience</h3>
             </div>
+            <p className="text-xs text-slate-400 mb-6 italic">
+              * Note: High Performance time strictly derived from BE55 and PA32. Complex time strictly derived from BE55 and Arrow.
+            </p>
             <div className="flex flex-col gap-3">
               {PILOT_DATA.fleet.map((item, idx) => (
                 <div
