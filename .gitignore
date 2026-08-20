@@ -3,7 +3,7 @@ node_modules
 out
 .DS_Store
 *.log
-*.pdf
-*.HEIC
-*.JPG
-*.jpg
+/*.pdf
+/*.HEIC
+/*.JPG
+/*.jpg
