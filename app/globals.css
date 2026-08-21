@@ -28,14 +28,15 @@
   }
 }
 
-/* Aerospace Grid Background Pattern */
+/* Aerospace Grid Background Pattern with Noticeable Center-to-Corner Radial Light Gradient */
 .bg-aerospace-grid {
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.12), transparent 45%),
-    radial-gradient(circle at 90% 40%, rgba(245, 158, 11, 0.05), transparent 35%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    radial-gradient(ellipse 80% 60% at 50% 35%, rgba(30, 58, 105, 0.55) 0%, rgba(15, 28, 55, 0.35) 45%, rgba(5, 10, 24, 0.85) 75%, #02050e 100%),
+    radial-gradient(circle at 50% 40%, rgba(6, 182, 212, 0.22) 0%, transparent 65%),
+    radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.12) 0%, transparent 45%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
 }
 
 /* Glassmorphism Card System */

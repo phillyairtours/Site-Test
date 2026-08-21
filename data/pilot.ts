@@ -104,8 +104,7 @@ export const PILOT_DATA: PilotProfile = {
       title: "Commercial Pilot",
       category: "Airplane Single Engine Land (ASEL)",
       authority: "Federal Aviation Administration (FAA)",
-      description:
-        "FAA-certified for commercial operations, charter transport, precision aircraft handling, and cross-country flight missions.",
+      description: "FAA certified for commercial operations.",
       badge: "Commercial ASEL",
       highlight: true,
     },
@@ -114,7 +113,7 @@ export const PILOT_DATA: PilotProfile = {
       category: "IFR Precision Operations",
       authority: "FAA",
       description:
-        "Proficient in IMC weather, precision instrument approaches (ILS, RNAV / GPS, LPV, VOR), and complex airspace navigation.",
+        "Proficient in IMC weather, instrument approaches (ILS, RNAV / GPS, LPV, VOR), and complex airspace navigation.",
       badge: "Instrument Rated",
       highlight: true,
     },
@@ -209,6 +208,18 @@ export const PILOT_DATA: PilotProfile = {
 
   projects: [
     {
+      title: "Technically Advanced Aircraft (TAA) Training & Operations",
+      subtitle: "453+ Logged TAA Hours • Modern Glass Cockpit & Autopilot Mastery",
+      category: "Modern Avionics & Safety",
+      description:
+        "An FAA-designated Technically Advanced Aircraft (TAA) features an integrated Primary Flight Display (PFD), Multi-Function Display (MFD), and a 2-axis coupled autopilot. TAA proficiency is crucial in modern aviation as it bridges manual stick-and-rudder piloting with high-efficiency automation management—dramatically reducing pilot workload during Single-Pilot IFR flights, maximizing situational awareness, and directly preparing aviators for modern corporate, Part 135, and airline flight decks.",
+      achievements: [
+        "Logged 453.1+ hours in TAA aircraft integrating Garmin G1000/G3X/Dynon glass avionics and coupled autopilots",
+        "Instruct and standardize glass cockpit scan techniques, GPS approach management, and automation failure procedures",
+        "Train pilots to prevent automation complacency through disciplined Single-Pilot Resource Management (SRM)",
+      ],
+    },
+    {
       title: "Philadelphia Air Tours",
       subtitle: "FAA-Approved Airplane Sightseeing Tours",
       category: "Aviation Tours",
@@ -242,7 +253,7 @@ export const PILOT_DATA: PilotProfile = {
       description:
         "Developed and executed operational workflows at Dorans Aviation covering fleet dispatch scheduling, maintenance coordination, instructor standardization checks, and real-time safety monitoring across daily flight activities.",
       achievements: [
-        "Standardized instructor check rides and student progress tracking metrics",
+        "Standardized instructor checkouts and student progress tracking metrics",
         "Enhanced aircraft dispatch reliability and maintenance tracking workflows",
         "Conducted recurrent safety seminars on crosswind handling and Single-Pilot Resource Management",
       ],
@@ -279,12 +290,20 @@ export const PILOT_DATA: PilotProfile = {
   ],
 
   fleet: [
-    { model: "Pipistrel Alpha Trainer (PIAT)", role: "398.0 Hrs • Primary & Advanced Instruction" },
-    { model: "Piper PA-28 Series (Archer / Cherokee / Arrow)", role: "124.7 Hrs • Complex & Commercial Transition" },
-    { model: "Cessna 172 Skyhawk", role: "91.6 Hrs • IFR & Cross-Country Operations" },
-    { model: "Cessna 150 / 150M / 150L", role: "49.9 Hrs • Foundational Flight Training" },
-    { model: "Piper Saratoga PA-32-301FT", role: "34.8 Hrs • High-Performance Operations" },
-    { model: "Tailwheel / Conventional Gear (7GCBC, C170, 7GCAA)", role: "17.7 Hrs • Stick & Rudder Precision" },
-    { model: "Beechcraft Baron BE55", role: "8.0 Hrs • Multi-Engine Operations" },
+    { model: "Pipistrel Alpha Trainer (PIAT & Alpha Trainer)", role: "398.0 Hrs • Modern Glass Primary & Advanced Training" },
+    { model: "Piper PA-28 Series (Archer, Cherokee, Arrow PA-28R)", role: "124.7 Hrs • Complex & Commercial Operations" },
+    { model: "Cessna 172 Skyhawk (C172)", role: "91.6 Hrs • IFR Precision & Cross-Country" },
+    { model: "Cessna 150 / 150M / 150L", role: "49.9 Hrs • Foundational Flight Instruction" },
+    { model: "Piper Saratoga PA-32-301FT", role: "34.8 Hrs • High-Performance 6-Seat Operations" },
+    { model: "Flight Design GX / CTSW", role: "14.0 Hrs • Light Sport & Energy Management" },
+    { model: "American Champion Citabria (7GCBC & 7GCAA)", role: "14.3 Hrs • Tailwheel & Aerobatics / Spin Recovery" },
+    { model: "Beechcraft Baron BE55", role: "8.0 Hrs • Multi-Engine Land (AMEL) & High-Performance" },
+    { model: "Cessna 170 (C170)", role: "3.0 Hrs • Conventional Gear / Tailwheel Operations" },
+    { model: "CZAW SportCruiser", role: "2.4 Hrs • Glass Cockpit Light Sport" },
+    { model: "Grumman American AA-1C Lynx", role: "1.7 Hrs • Precision Transition Handling" },
+    { model: "Piper Aztec PA-27", role: "1.2 Hrs • Multi-Engine Twin Operations" },
+    { model: "JMB VL3 Evolution", role: "0.6 Hrs • High-Performance Advanced TAA" },
+    { model: "Piper PA-18 Super Cub", role: "0.4 Hrs • Bush / Short-Field Tailwheel Precision" },
+    { model: "FAA-Approved Flight Simulator (PIAT FTD)", role: "2.2 Hrs • Instrument Procedures & Emergency Scenarios" },
   ],
 };

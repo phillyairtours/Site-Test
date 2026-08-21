@@ -48,11 +48,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
             <Plane className="w-5 h-5" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-base sm:text-lg tracking-tight text-white flex items-center gap-2">
+            <span className="font-bold text-lg sm:text-xl tracking-tight text-white flex items-center gap-2">
               {PILOT_DATA.name}
-              <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
+              <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_#34d399]" />
             </span>
-            <span className="text-xs text-slate-400 font-mono hidden sm:inline">
+            <span className="text-sm text-cyan-200 font-mono font-bold hidden sm:inline">
               Commercial Pilot • CFIS
             </span>
           </div>
@@ -64,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-cyan-hud transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-cyan-hud hover:after:w-full after:transition-all"
+              className="text-base font-bold text-slate-100 hover:text-cyan-200 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-cyan-300 hover:after:w-full after:transition-all"
             >
               {link.label}
             </Link>
@@ -78,9 +78,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
-            className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-cyan-400/40 hover:bg-cyan-500/10 transition-all"
+            className="p-2.5 rounded-lg bg-white/10 border border-white/20 text-slate-100 hover:text-white hover:border-cyan-300 hover:bg-cyan-500/20 transition-all"
           >
-            <Linkedin className="w-4 h-4" />
+            <Linkedin className="w-5 h-5" />
           </a>
 
           <a
@@ -88,16 +88,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Repository"
-            className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-cyan-400/40 hover:bg-cyan-500/10 transition-all"
+            className="p-2.5 rounded-lg bg-white/10 border border-white/20 text-slate-100 hover:text-white hover:border-cyan-300 hover:bg-cyan-500/20 transition-all"
           >
-            <Github className="w-4 h-4" />
+            <Github className="w-5 h-5" />
           </a>
 
           <button
             onClick={onOpenResume}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 hover:bg-amber-500/20 hover:border-amber-400 text-xs sm:text-sm font-semibold transition-all shadow-sm"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-amber-500/20 border border-amber-400/60 text-amber-200 hover:bg-amber-500/30 hover:border-amber-300 text-sm sm:text-base font-bold transition-all shadow-sm"
           >
-            <FileText className="w-4 h-4" />
+            <FileText className="w-4 h-4 text-amber-300" />
             <span>Pilot CV</span>
           </button>
         </div>

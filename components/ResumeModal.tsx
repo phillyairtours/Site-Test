@@ -90,44 +90,62 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* Flight Hours Table */}
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-2 font-mono">
-              Flight Experience ({PILOT_DATA.flightHours.totalTime}+ Total Hours)
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-2.5 font-mono">
+              Flight Experience ({PILOT_DATA.flightHours.totalTime}+ Total Logged Hours)
             </h2>
-            <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center text-xs">
-              <div className="p-2 bg-slate-100 rounded border border-slate-200">
-                <div className="text-[10px] text-slate-500 uppercase">Total Time</div>
-                <div className="text-base font-bold text-slate-950 font-mono">
+            <div className="grid grid-cols-3 sm:grid-cols-5 gap-2.5 text-center text-xs">
+              <div className="p-2.5 bg-slate-100 rounded-lg border border-slate-200">
+                <div className="text-[11px] font-bold text-slate-600 uppercase">Total Time</div>
+                <div className="text-lg font-black text-slate-950 font-mono mt-0.5">
                   {PILOT_DATA.flightHours.totalTime}+
                 </div>
               </div>
-              <div className="p-2 bg-slate-100 rounded border border-slate-200">
-                <div className="text-[10px] text-slate-500 uppercase">PIC</div>
-                <div className="text-base font-bold text-slate-950 font-mono">
+              <div className="p-2.5 bg-slate-100 rounded-lg border border-slate-200">
+                <div className="text-[11px] font-bold text-slate-600 uppercase">PIC</div>
+                <div className="text-lg font-black text-slate-950 font-mono mt-0.5">
                   {PILOT_DATA.flightHours.pic}+
                 </div>
               </div>
-              <div className="p-2 bg-slate-100 rounded border border-slate-200">
-                <div className="text-[10px] text-slate-500 uppercase">Cross Country</div>
-                <div className="text-base font-bold text-slate-950 font-mono">
-                  {PILOT_DATA.flightHours.crossCountry}+
-                </div>
-              </div>
-              <div className="p-2 bg-slate-100 rounded border border-slate-200">
-                <div className="text-[10px] text-slate-500 uppercase">Dual Given</div>
-                <div className="text-base font-bold text-slate-950 font-mono">
+              <div className="p-2.5 bg-slate-100 rounded-lg border border-slate-200">
+                <div className="text-[11px] font-bold text-slate-600 uppercase">Dual Given</div>
+                <div className="text-lg font-black text-slate-950 font-mono mt-0.5">
                   {PILOT_DATA.flightHours.dualGiven}+
                 </div>
               </div>
-              <div className="p-2 bg-slate-100 rounded border border-slate-200">
-                <div className="text-[10px] text-slate-500 uppercase">Instrument</div>
-                <div className="text-base font-bold text-slate-950 font-mono">
+              <div className="p-2.5 bg-slate-100 rounded-lg border border-slate-200">
+                <div className="text-[11px] font-bold text-slate-600 uppercase">Cross Country</div>
+                <div className="text-lg font-black text-slate-950 font-mono mt-0.5">
+                  {PILOT_DATA.flightHours.crossCountry}+
+                </div>
+              </div>
+              <div className="p-2.5 bg-slate-100 rounded-lg border border-slate-200">
+                <div className="text-[11px] font-bold text-slate-600 uppercase">Instrument</div>
+                <div className="text-lg font-black text-slate-950 font-mono mt-0.5">
                   {PILOT_DATA.flightHours.instrument}+
                 </div>
               </div>
-              <div className="p-2 bg-slate-100 rounded border border-slate-200">
-                <div className="text-[10px] text-slate-500 uppercase">Night</div>
-                <div className="text-base font-bold text-slate-950 font-mono">
+              <div className="p-2.5 bg-slate-100 rounded-lg border border-slate-200">
+                <div className="text-[11px] font-bold text-slate-600 uppercase">Night Hours</div>
+                <div className="text-lg font-black text-slate-950 font-mono mt-0.5">
                   {PILOT_DATA.flightHours.night}+
+                </div>
+              </div>
+              <div className="p-2.5 bg-slate-100 rounded-lg border border-slate-200">
+                <div className="text-[11px] font-bold text-slate-600 uppercase">High Perf (&gt;200HP)</div>
+                <div className="text-lg font-black text-slate-950 font-mono mt-0.5">
+                  {PILOT_DATA.flightHours.highPerformance}+
+                </div>
+              </div>
+              <div className="p-2.5 bg-slate-100 rounded-lg border border-slate-200">
+                <div className="text-[11px] font-bold text-slate-600 uppercase">Complex</div>
+                <div className="text-lg font-black text-slate-950 font-mono mt-0.5">
+                  {PILOT_DATA.flightHours.complex}+
+                </div>
+              </div>
+              <div className="p-2.5 bg-slate-100 rounded-lg border border-slate-200">
+                <div className="text-[11px] font-bold text-slate-600 uppercase">Tailwheel</div>
+                <div className="text-lg font-black text-slate-950 font-mono mt-0.5">
+                  {PILOT_DATA.flightHours.tailwheel}+
                 </div>
               </div>
             </div>
@@ -135,35 +153,35 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* Certificates & Ratings */}
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-2 font-mono">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-2.5 font-mono">
               FAA Certificates & Endorsements
             </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-800 list-disc list-inside">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-800 list-disc list-inside">
               <li><strong>Commercial Pilot:</strong> Airplane Single Engine Land (ASEL)</li>
               <li><strong>Instrument Rating:</strong> Airplane (IFR Approach Capable)</li>
               <li><strong>Flight Instructor:</strong> Sport Pilot (CFIS)</li>
               <li><strong>Ground Instructor:</strong> Advanced (AGI) & Instrument (IGI)</li>
-              <li><strong>Endorsements:</strong> Tailwheel, High Performance, Complex</li>
-              <li><strong>Medical:</strong> FAA First Class Medical (Current & Valid)</li>
+              <li><strong>Endorsements:</strong> Tailwheel, High Performance (&gt;200HP), Complex Aircraft</li>
+              <li><strong>Medical:</strong> FAA Second Class Medical (Current & Valid)</li>
             </ul>
           </div>
 
           {/* Professional Work Experience */}
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-3 font-mono">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-3 font-mono">
               Professional Flight Experience
             </h2>
             <div className="space-y-4">
               {PILOT_DATA.experiences.map((exp, idx) => (
                 <div key={idx} className="space-y-1">
-                  <div className="flex justify-between items-baseline font-bold text-xs sm:text-sm text-slate-950">
+                  <div className="flex justify-between items-baseline font-bold text-sm sm:text-base text-slate-950">
                     <span>{exp.role}</span>
-                    <span className="font-mono text-slate-600">{exp.period}</span>
+                    <span className="font-mono text-xs text-slate-600">{exp.period}</span>
                   </div>
-                  <div className="text-xs font-semibold text-sky-800">
+                  <div className="text-sm font-semibold text-sky-800">
                     {exp.company} • {exp.location}
                   </div>
-                  <ul className="list-disc list-inside text-xs text-slate-700 space-y-0.5 pt-0.5">
+                  <ul className="list-disc list-inside text-sm text-slate-700 space-y-1 pt-0.5">
                     {exp.highlights.map((h, hIdx) => (
                       <li key={hIdx}>{h}</li>
                     ))}
@@ -175,10 +193,10 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* Competencies & Languages */}
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-2 font-mono">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-1 mb-2.5 font-mono">
               Competencies & Languages
             </h2>
-            <div className="text-xs text-slate-700 space-y-1">
+            <div className="text-sm text-slate-800 space-y-1.5">
               <div>
                 <strong>Languages:</strong> English (Full Professional), Russian (Full Professional), Ukrainian (Full Professional)
               </div>

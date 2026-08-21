@@ -52,7 +52,7 @@ const PILOT_PROFILE = {
       title: "Commercial Pilot",
       category: "Airplane Single Engine Land (ASEL)",
       authority: "Federal Aviation Administration (FAA)",
-      description: "Privileged for commercial flight operations, passenger and cargo charter, ferry flights, and precision operations.",
+      description: "FAA certified for commercial operations.",
       badge: "FAA COMMERCIAL",
       highlight: true
     },
